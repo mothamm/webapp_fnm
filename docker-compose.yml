@@ -1,5 +1,5 @@
 version: "3"
-
+#defining the services for our python web and nginx.
 services:
   app:
     build:
@@ -10,7 +10,7 @@ services:
   nginx:
     image: nginx:latest
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro   #attaching the nginx conf file from local to container so any changes in local file occurs in container
     depends_on:
       - app
     ports:
